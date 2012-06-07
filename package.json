@@ -2,7 +2,7 @@
   "author": "David Trejo <dtrejo@cs.brown.edu> (http://dtrejo.com/)",
   "name": "report",
   "description": "Report test results to npm's test result listings",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "//github.com/dtrejo/report.git"
@@ -17,5 +17,6 @@
   "dependencies": {
     "request": "~2.9.202"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "optionalDependencies": {}
 }
