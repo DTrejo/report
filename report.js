@@ -1,6 +1,7 @@
-exports = module.exports = report
+module.exports = report
 
 var request = require('request')
+var url = process.env.NPATURL || 'http://dtrejo.com/'; // TODO replace
 
 // reports test results to couchCB. additional information about the node
 // version and operating system is added before reporting.
@@ -29,9 +30,14 @@ function report(results, cb) {
   , platform: process.platform
   }
 
-  // TODO: remove me
-  console.log(results.url, '>>', data)
-
   var options = { url: results.url || url, json: data }
-  // request.put(options, cb)
+  
+  // TODO: remove me
+  console.log(options);
+  fs.writeFile(require('path').join(process.env.home, 'report.json')
+              , JSON.stringify(options)
+              , 'utf8')
+  // request.put(options, function(er, response, body) {
+  //   // TODO do something?
+  // })
 }
